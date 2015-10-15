@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.acnt.duplicatefile.app.AnalizeActivity">
+    <item android:id="@+id/analize"
+          android:title="Analize"
+          android:orderInCategory="100"
+          app:showAsAction="always"/>
+
+
+      <item android:id="@+id/delete"
+          android:title="Delete"
+          android:orderInCategory="100"
+          app:showAsAction="always"/>
+</menu>
