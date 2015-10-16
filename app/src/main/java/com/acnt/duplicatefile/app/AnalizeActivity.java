@@ -15,6 +15,7 @@ import trikita.log.Log;
 
 import java.io.File;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 
 public class AnalizeActivity extends BaseActivity {
@@ -119,7 +120,7 @@ public class AnalizeActivity extends BaseActivity {
                     new File(f).delete();
                     iterator.remove();
                     publishProgress(0);
-
+                    //TimeUnit.SECONDS.sleep(3);
                 }
 
             } catch (Exception ex) {
@@ -134,6 +135,10 @@ public class AnalizeActivity extends BaseActivity {
             super.onPostExecute(aVoid);
             mProgressDialog.dismiss();
             mAdapter.notifyDataSetChanged();
+            if (mDuplicateFiles.isEmpty()) {
+                ToastUtil.showShortToast(mAct, "Success.");
+            }
+
         }
     }
 

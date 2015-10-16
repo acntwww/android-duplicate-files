@@ -3,6 +3,7 @@ package com.acnt.duplicatefile.app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import com.acnt.duplicatefile.app.base.BaseActivity;
 import com.acnt.duplicatefile.app.config.API;
+import com.tencent.bugly.crashreport.CrashReport;
 import net.rdrei.android.dirchooser.DirectoryChooserActivity;
 import net.rdrei.android.dirchooser.DirectoryChooserConfig;
 import trikita.log.Log;
@@ -89,9 +91,9 @@ public class MainActivity extends BaseActivity {
 
         final DirectoryChooserConfig config = DirectoryChooserConfig.builder()
                 .newDirectoryName("DirChooserSample")
-                .allowReadOnlyDirectory(true)
+                .allowReadOnlyDirectory(false)
                 .allowNewDirectoryNameModification(true)
-                .initialDirectory("/sdcard")
+                .initialDirectory(Environment.getExternalStorageDirectory().getPath())
                 .build();
 
         chooserIntent.putExtra(

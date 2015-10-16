@@ -1,6 +1,7 @@
 package com.acnt.duplicatefile.app;
 
 import android.app.Application;
+import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * 应用全局变量
@@ -19,6 +20,8 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         sGlobalContext = this;
+        CrashReport.initCrashReport(this, "900010095", false);
+
     }
 
     @Override

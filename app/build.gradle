@@ -16,7 +16,7 @@ repositories {
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.0"
 
     defaultConfig {
         applicationId "com.acnt.duplicatefile.app"
@@ -51,7 +51,7 @@ android {
     }
 
 }
-
+apply plugin: 'bugly'   //添加Bugly符号表插件
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -61,4 +61,12 @@ dependencies {
     compile 'commons-codec:commons-codec:1.10'
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'co.trikita:log:1.1.5'
+
+    compile 'com.tencent.bugly:crashreport:1.2.3.8'
+
+}
+
+bugly {
+    appId = '900010095'    //注册时分配的App ID
+    appKey = 'lxFByyWgaHjoz1Ro'  //注册时分配的App Key
 }
